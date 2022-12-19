@@ -27,9 +27,8 @@ export default function Venues () {
                         <h3>Venue Name: {value.name}</h3>
                         <p>Address: {value.address}</p>
                         <p>Description: {value.description}</p>
-                        <p>Onsite Parking: {value.onsite_parking}</p>
+                        <p>Onsite Parking: {value.onsite_parking?"yes":"no"}</p>
                         <p>Capacity: {value.capacity}</p>
-                        <p>Photo: {value.photo_url}</p>
                         <img src={value.photo_url}></img>
                         <br />
                     </div> 

@@ -14,3 +14,38 @@
   font-size: 20px;
   align-items: center;
 }
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: cursive;
+  font-size: 20px;
+}
+
+
+.footer-container {
+  padding-top: 3em;
+  background-color: white;
+  width: 100%;
+  align-items: center;
+}
+
+a:link {
+  color: blue;
+}
+
+/* visited link */
+a:visited {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
