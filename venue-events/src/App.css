@@ -4,7 +4,9 @@
 
 img {
   max-height: 350px;
+  border-radius: 3px;
 }
+
 
 .nav {
   font-size: 20px;
@@ -17,13 +19,14 @@ img {
   height:40px;
   font-size: 20px;
   align-items: center;
+  /* border-bottom: 1px solid black; */
 }
 
 .footer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  font-family: cursive;
+  /* font-family: cursive; */
   font-size: 20px;
 }
 
@@ -37,6 +40,7 @@ img {
 
 a:link {
   color: blue;
+  text-decoration: none;
 }
 
 /* visited link */
@@ -52,4 +56,43 @@ a:hover {
 /* selected link */
 a:active {
   color: blue;
+}
+
+.venue-events-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 15px;
+}
+
+.venue-events-wrapper img {
+  height: 80%;
+}
+
+.venue-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.venue-details h3 {
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+ 
+}
+
+.venue-details h5, p {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+.venue-description {
+  font-size: 18px;
 }
