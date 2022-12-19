@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.nav {
+  font-size: 20px;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height:40px;
+  font-size: 20px;
+  align-items: center;
+}
