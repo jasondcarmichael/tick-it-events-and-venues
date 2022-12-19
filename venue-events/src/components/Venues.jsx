@@ -6,7 +6,7 @@ export default function Venues () {
     const [venues, setVenues] = useState([])
 
     const getData = async () => {
-        await axios.get('http://localhost:3001/api/venues')
+        await axios.get('http://localhost:8000/venues/')
         .then(res => {
             if (res) {
                 setVenues(res.data)
@@ -30,6 +30,7 @@ export default function Venues () {
                         <p>Onsite Parking: {value.onsite_parking}</p>
                         <p>Capacity: {value.capacity}</p>
                         <p>Photo: {value.photo_url}</p>
+                        <img src={value.photo_url}></img>
                         <br />
                     </div> 
                 )
