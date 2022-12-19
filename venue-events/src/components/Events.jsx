@@ -6,7 +6,7 @@ export default function Events () {
     const [events, setEvents] = useState([])
 
     const getData = async () => {
-        await axios.get('http://localhost:3001/api/events')
+        await axios.get('http://localhost:8000/events')
         .then(res => {
             if (res) {
                 setEvents(res.data)
