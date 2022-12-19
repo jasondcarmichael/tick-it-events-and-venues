@@ -32,8 +32,9 @@ export default function Events () {
                         <p>Date of Event: {value.date}</p>
                         <p>Alcohol Servered: {value.alcohol_served}</p>
                         <p>Photo: {value.photo_url}</p>
+                        <img src={value.photo_url}></img>
                         <br />
-                    </div> 
+                    </div>
                 )
             })}
 
