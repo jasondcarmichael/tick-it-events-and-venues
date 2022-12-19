@@ -11,15 +11,15 @@ export default function Venues (props) {
 
     return (
         <div className="venues">
+            <h1> Local Venues </h1>
             {props.venues.map((venue) => {
                 return (
                     <div key={venue.id} onClick={() => showVenueEvents (venue)}>
                         <h3>Venue Name: {venue.name}</h3>
                         <p>Address: {venue.address}</p>
                         <p>Description: {venue.description}</p>
-                        <p>Onsite Parking: {venue.onsite_parking}</p>
+                        <p>Onsite Parking: {venue.onsite_parking?"Yes":"No"}</p>
                         <p>Capacity: {venue.capacity}</p>
-                        <p>Photo: {venue.photo_url}</p>
                         <img src={venue.photo_url}></img>
                         <br />
                     </div> 
