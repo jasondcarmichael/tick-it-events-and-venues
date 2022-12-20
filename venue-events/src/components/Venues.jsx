@@ -8,7 +8,7 @@ export default function Venues (props) {
     const showVenueEvents = (venue) => {
         navigate(`${venue.id}`)
     }
-
+    
     return (
         <div className="venues">
             <h1> Local Venues </h1>
@@ -24,6 +24,7 @@ export default function Venues (props) {
                         <p>Capacity: {venue.capacity}</p>
                         <img src={venue.photo_url}></img>
                         <br />
+                        
                     </div> 
                 )
             })}
