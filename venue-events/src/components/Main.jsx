@@ -5,6 +5,7 @@ import Home from './Home'
 import Events from './Events'
 import Venues from './Venues'
 import VenueDetails from './VenueDetails'
+import EventDetails from './EventDetails'
 
 export default function Main () {
 
@@ -32,6 +33,7 @@ export default function Main () {
                 <Route path = "/venues" element = {<Venues venues={venues}/>} />
                 <Route path = "/venues/:id" element = {<VenueDetails venues={venues} />} />
                 <Route path = "/events" element = {<Events />} />
+                <Route path = "/events/:id" element ={<EventDetails/>}/>
             </Routes>
         </div>
     )
