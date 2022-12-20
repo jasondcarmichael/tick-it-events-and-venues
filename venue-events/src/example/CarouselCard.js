@@ -41,8 +41,8 @@ function Card({ title, image, currentSlide, currentIndex }: any) {
         >
           <div
             style={{
-              width: 800,
-              height: 550,
+              width: 600,
+              height: 350,
               overflow: "hidden",
               position: "relative",
             }}
