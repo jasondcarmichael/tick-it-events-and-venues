@@ -1,41 +1,32 @@
 import { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-export default function Venues () {
+export default function Venues (props) {
 
-    const [venues, setVenues] = useState([])
-
-    const getData = async () => {
-        await axios.get('http://localhost:8000/venues/')
-        .then(res => {
-            if (res) {
-                setVenues(res.data)
-                console.log(res.data)
-            }
-        })
+    let navigate = useNavigate()
+    const showVenueEvents = (venue) => {
+        navigate(`${venue.id}`)
     }
-
-    useEffect(() => {
-        getData()
-    }, [])
 
     return (
         <div className="venues">
-            {venues.map((value) => {
+            <h1> Local Venues </h1>
+            {props.venues.map((venue) => {
                 return (
-                    <div key={value.id}>
-                        <h3>Venue Name: {value.name}</h3>
-                        <p>Address: {value.address}</p>
-                        <p>Description: {value.description}</p>
-                        <p>Onsite Parking: {value.onsite_parking}</p>
-                        <p>Capacity: {value.capacity}</p>
-                        
-                        <img src={value.photo_url}></img>
+                    <div key={venue.id} onClick={() => showVenueEvents (venue)}>
+                        <h3>Venue Name: {venue.name}</h3>
+                        <p>Address: {venue.address}</p>
+                        <p>Description: {venue.description}</p>
+
+                        <p>Onsite Parking: {venue.onsite_parking?"Yes":"No"}</p>
+
+                        <p>Capacity: {venue.capacity}</p>
+                        <img src={venue.photo_url}></img>
                         <br />
                     </div> 
                 )
             })}
-
         </div>
     )
 }

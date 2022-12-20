@@ -19,21 +19,21 @@ export default function Events () {
         getData()
     }, [])
 
-    return (
+    return !events? null: (
         <div className="events">
             {events.map((value) => {
                 return (
                     <div key={value.id}>
-                        <h3>Venue: {value.venue}</h3>
+                        <h3>Venue: {value.venue.name}</h3>
                         <h3>Event Name: {value.name}</h3>
                         <h3>Event Type: {value.type}</h3>
                         <p>Event Description: {value.description}</p>
-                        <p>ASL Interpreter: {value.asl_interpreter}</p>
+                        <p>ASL Interpreter: {value.asl_interpreter?"yes":"no"}</p>
                         <p>Date of Event: {value.date}</p>
-                        <p>Alcohol Servered: {value.alcohol_served}</p>
+                        <p>Alcohol Served: {value.alcohol_served?"yes":"no"}</p>
                         <img src={value.photo_url}></img>
                         <br />
-                    </div> 
+                    </div>
                 )
             })}
 
