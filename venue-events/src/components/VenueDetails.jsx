@@ -23,6 +23,8 @@ export default function VenueDetails (props) {
         getData()
     }, [])
 
+
+
     return venue ?(
         <div>
         <div className="venue-events-wrapper">
@@ -46,6 +48,13 @@ export default function VenueDetails (props) {
             <div>
                 <h2>Upcoming Events</h2>
                 <p>Event details to come...</p>
+
+                {venue.events.map((event) => {
+                    <h5>{event.name}</h5>
+                })}
+
+
+
             </div>
 
        
