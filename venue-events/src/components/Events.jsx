@@ -28,16 +28,18 @@ export default function Events () {
         <div className="events">
             {events.map((value) => {
                 return (
-                    <div key={value.id} onClick={()=>goToEvent(value)}>
-                        <h3>Venue: {value.venue.name}</h3>
-                        
-                        <h3>Event Name: {value.name}</h3>
-                        <h3>Event Type: {value.type}</h3>
-                        <p>Event Description: {value.description}</p>
-                        <p>ASL Interpreter: {value.asl_interpreter?"yes":"no"}</p>
-                        <p>Date of Event: {value.date}</p>
-                        <p>Alcohol Served: {value.alcohol_served?"yes":"no"}</p>
+                    <div className="event-card" key={value.id} onClick={()=>goToEvent(value)}>
+                        <h2>{value.name}</h2>
                         <img src={value.photo_url}></img>
+                        <p>{value.description}</p>
+                        <p><b>Date of Event:</b> {value.date}</p>
+                        <p><b>Venue:</b> {value.venue.name}</p>
+                        <p><b>Event Type:</b> {value.type}</p>
+                        
+                        <p><b>ASL Interpreter:</b> {value.asl_interpreter?"yes":"no"}</p>
+                       
+                        <p><b>Alcohol Served:</b> {value.alcohol_served?"yes":"no"}</p>
+                        
                         <br />
                     </div>
                 )
