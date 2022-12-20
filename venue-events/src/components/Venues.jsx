@@ -10,11 +10,11 @@ export default function Venues (props) {
     }
 
     return (
-        <div className="venues">
+        <div className="venues-container">
             <h1> Local Venues </h1>
             {props.venues.map((venue) => {
                 return (
-                    <div key={venue.id} onClick={() => showVenueEvents (venue)}>
+                    <div className="venue-card" key={venue.id} onClick={() => showVenueEvents (venue)}>
                         <h3>Venue Name: {venue.name}</h3>
                         <p>Address: {venue.address}</p>
                         <p>Description: {venue.description}</p>
