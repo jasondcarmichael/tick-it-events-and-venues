@@ -6,7 +6,7 @@ export default function Events () {
     const [events, setEvents] = useState([])
 
     const getData = async () => {
-        await axios.get('http://localhost:3001/api/events')
+        await axios.get('http://localhost:8000/events')
         .then(res => {
             if (res) {
                 setEvents(res.data)
@@ -31,7 +31,7 @@ export default function Events () {
                         <p>ASL Interpreter: {value.asl_interpreter}</p>
                         <p>Date of Event: {value.date}</p>
                         <p>Alcohol Servered: {value.alcohol_served}</p>
-                        <p>Photo: {value.photo_url}</p>
+                        <img src={value.photo_url}></img>
                         <br />
                     </div> 
                 )
