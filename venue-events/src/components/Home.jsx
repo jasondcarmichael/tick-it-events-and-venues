@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'
 import Carousel3d from "../example/Carousel3d";
 import CarouselCard from "../example/CarouselCard";
 
@@ -6,13 +7,14 @@ import Carousel1 from "../example/images/Carousel1.png";
 import Carousel2 from "../example/images/Carousel2.png";
 import Carousel3 from "../example/images/Carousel3.png";
 import Carousel4 from "../example/images/Carousel4.png";
-import Venues from './Venues';
-
-export default function Home () {
 
 
+export default function Home (props) {
+  let navigate = useNavigate()
+    const showVenueEvents = (venue) => {
+        navigate(`${venue.id}`)
+    }
     
-      
   return (
     <div className="home-container">
       <div className='home'
@@ -54,9 +56,24 @@ export default function Home () {
           />
         </div>     
       </div>
-        <div>
-            {/* <Venues /> */}
-            <h1>Venues</h1>
+      <div className="venues-container">
+            <h1> Local Venues </h1>
+            {props.venues.map((venue) => {
+                return (
+                    <div className="venue-card" key={venue.id} onClick={() => showVenueEvents (venue)}>
+                        <h3>{venue.name}</h3>
+                        {/* <p>Address: {venue.address}</p>
+                        <p>Description: {venue.description}</p>
+
+                        <p>Onsite Parking: {venue.onsite_parking?"Yes":"No"}</p>
+
+                        <p>Capacity: {venue.capacity}</p> */}
+                        <img src={venue.photo_url}></img>
+                        <h4> More Info </h4>
+                        <br />
+                    </div> 
+                )
+            })}
         </div>
     </div>
     

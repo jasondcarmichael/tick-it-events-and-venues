@@ -27,7 +27,8 @@ export default function Main () {
     return (
         <div>
             <Routes>
-                <Route path = "/" element = {<Home />} />
+                <Route path = "/" element = {<Home venues={venues}/>} />
+                <Route path = "/:id" element = {<VenueDetails venues={venues} />} />
                 <Route path = "/venues" element = {<Venues venues={venues}/>} />
                 <Route path = "/venues/:id" element = {<VenueDetails venues={venues} />} />
                 <Route path = "/events" element = {<Events />} />
