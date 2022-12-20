@@ -30,9 +30,8 @@ export default function VenueDetails (props) {
             </div>
                 <p>Address: {venue.address}</p>
                 <p>Description: {venue.description}</p>
-                <p>Onsite Parking: {venue.onsite_parking}</p>
+                <p>Onsite Parking: {venue.onsite_parking?"yes":"no"}</p>
                 <p>Capacity: {venue.capacity}</p>
-                <p>Photo: {venue.photo_url}</p>
                 <img src={venue.photo_url}></img>
                 <br />
 
