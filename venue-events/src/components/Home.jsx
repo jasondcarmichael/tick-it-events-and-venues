@@ -58,6 +58,7 @@ export default function Home (props) {
       </div>
       <div className="venues-container">
             <h1> Local Venues </h1>
+          <div className="venues-wrapper">
             {props.venues.map((venue) => {
                 return (
                     <div className="venue-card" key={venue.id} onClick={() => showVenueEvents (venue)}>
@@ -74,6 +75,7 @@ export default function Home (props) {
                     </div> 
                 )
             })}
+          </div>
         </div>
     </div>
     
