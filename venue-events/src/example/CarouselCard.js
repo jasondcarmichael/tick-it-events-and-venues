@@ -13,6 +13,7 @@ function Card({ title, image, currentSlide, currentIndex }: any) {
       : "0 2px 10px rgb(0 0 0 / 8%)",
   });
   return (
+    
     <animated.div
       style={{ ...styles, height: "fit-content" }}
       onMouseEnter={() => setShown(true)}
@@ -40,8 +41,8 @@ function Card({ title, image, currentSlide, currentIndex }: any) {
         >
           <div
             style={{
-              width: 800,
-              height: 550,
+              width: 600,
+              height: 350,
               overflow: "hidden",
               position: "relative",
             }}

@@ -1,6 +1,5 @@
 import React from 'react';
-
-
+import { useNavigate } from 'react-router-dom'
 import Carousel3d from "../example/Carousel3d";
 import CarouselCard from "../example/CarouselCard";
 
@@ -9,13 +8,16 @@ import Carousel2 from "../example/images/Carousel2.png";
 import Carousel3 from "../example/images/Carousel3.png";
 import Carousel4 from "../example/images/Carousel4.png";
 
-export default function Home () {
 
-
+export default function Home (props) {
+  let navigate = useNavigate()
+    const showVenueEvents = (venue) => {
+        navigate(`venues/${venue.id}`)
+    }
     
-      
-      return (
-          <div className='home'
+  return (
+    <div className="home-container">
+      <div className='home'
           style={{
             display: "flex",
             justifyContent: "center",
@@ -26,40 +28,54 @@ export default function Home () {
           }}
           >
               {/* <h1> Welcome To Venue List </h1> */}
-              <div style={{ width: 1100, height: "100vh" }}>
-        <Carousel3d
-          cards={[
-            {
-              key: 1,
-              content: <CarouselCard title="War Paradise" image={Carousel1} />,
-            },
-            {
-              key: 2,
-              content: <CarouselCard title="Town Star" image={Carousel2} />,
-            },
-            {
-              key: 3,
-              content: (
-                <CarouselCard title="Defense Heroes" image={Carousel3} />
-              ),
-            },
-            {
-              key: 4,
-              content: (
+        <div style={{ width: 1100, height: "65vh" }}>
+          <Carousel3d
+            cards={[
+              {
+                key: 1,
+                content: <CarouselCard title="War Paradise" image={Carousel1} />,
+              },
+              {
+                key: 2,
+                content: <CarouselCard title="Town Star" image={Carousel2} />,
+              },
+              {
+                key: 3,
+                content: (
                   <CarouselCard title="Defense Heroes" image={Carousel3} />
                 ),
-              }
-          ]}
-          offset={2}
-        />
+              },
+              {
+                key: 4,
+                content: (
+                    <CarouselCard title="Dolla and Fodera" image={Carousel4} />
+                  ),
+                }
+            ]}
+            offset={2}
+          />
+        </div>     
       </div>
-             
-           
+      <div className="venues-container">
+            <h1> Local Venues </h1>
+            {props.venues.map((venue) => {
+                return (
+                    <div className="venue-card" key={venue.id} onClick={() => showVenueEvents (venue)}>
+                        <h3>{venue.name}</h3>
+                        {/* <p>Address: {venue.address}</p>
+                        <p>Description: {venue.description}</p>
+
+                        <p>Onsite Parking: {venue.onsite_parking?"Yes":"No"}</p>
+
+                        <p>Capacity: {venue.capacity}</p> */}
+                        <img src={venue.photo_url}></img>
+                        <h4> More Info </h4>
+                        <br />
+                    </div> 
+                )
+            })}
         </div>
-      
-      
-      
+    </div>
     
-       
-    )
+  )
 }

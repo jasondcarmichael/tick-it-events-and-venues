@@ -8,13 +8,13 @@ export default function Venues (props) {
     const showVenueEvents = (venue) => {
         navigate(`${venue.id}`)
     }
-
+    
     return (
-        <div className="venues">
+        <div className="venues-container">
             <h1> Local Venues </h1>
             {props.venues.map((venue) => {
                 return (
-                    <div key={venue.id} onClick={() => showVenueEvents (venue)}>
+                    <div className="venue-card" key={venue.id} onClick={() => showVenueEvents (venue)}>
                         <h3>Venue Name: {venue.name}</h3>
                         <p>Address: {venue.address}</p>
                         <p>Description: {venue.description}</p>
@@ -24,6 +24,7 @@ export default function Venues (props) {
                         <p>Capacity: {venue.capacity}</p>
                         <img src={venue.photo_url}></img>
                         <br />
+                        
                     </div> 
                 )
             })}
