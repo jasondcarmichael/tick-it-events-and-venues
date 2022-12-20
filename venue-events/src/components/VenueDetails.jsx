@@ -63,8 +63,11 @@ const goToEvent=(x)=>{
             </div>
         </div>
 
-            <div>
-                <h2>Upcoming Events</h2>
+        <div>
+            <h2>Upcoming Events</h2>
+
+            <div className="upcoming-events">
+                
                 {(!event)?
                 <p>Event details to come...</p>:
                 <div>
@@ -73,16 +76,16 @@ const goToEvent=(x)=>{
                     (venue.id !== event.venue_id)?
                     null
                     : 
-                    <div onClick={()=>goToEvent(event)}>
+                    <div className="upcoming-events-card" onClick={()=>goToEvent(event)}>
                     <h5>{event.name} at {event.date}</h5>
                     <img src={event.photo_url}></img>
+                    <p id="more-info"> More Info >>> </p>
                    </div>
                     
                 ))}
-
-
                 </div>}
             </div>
+        </div>
 
        
         </div>

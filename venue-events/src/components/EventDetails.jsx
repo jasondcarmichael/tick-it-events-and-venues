@@ -29,28 +29,25 @@ const goToVenue=(x)=>{
     return !event? null: (
         <div>
         <div className="events-wrapper">
+
             <div className="events-header">
-            <div key={event.id} onClick={()=>goToVenue(event)}>
-                        <h3>Venue: {event.venue.name}</h3>
-                        
-                        <h3>Event Name: {event.name}</h3>
-                        <h3>Event Type: {event.type}</h3>
-                        <p>Event Description: {event.description}</p>
-                        <p>ASL Interpreter: {event.asl_interpreter?"yes":"no"}</p>
-                        <p>Date of Event: {event.date}</p>
-                        <p>Alcohol Served: {event.alcohol_served?"yes":"no"}</p>
-                        <img src={event.photo_url}></img>
-                        <br />
-                    </div>
-        </div>
-
-            <div>
-   
-
-
+                <img src={event.photo_url}></img>
             </div>
 
-       
+                <div className="event-details" key={event.id} onClick={()=>goToVenue(event)}>
+                    <h2>{event.name}</h2>
+                        <p>{event.description}</p>
+                    
+                        <p><b>VENUE:</b> {event.venue.name}</p>
+                      
+                        <p><b>EVENT TYPE:</b> {event.type}</p>
+                        
+                        <p><b>ASL Interpreter:</b> {event.asl_interpreter?"yes":"no"}</p>
+               
+                        <p><b>DATE:</b> {event.date}</p>
+                       
+                        <p><b>ALCOHOL SERVED:</b> {event.alcohol_served?"yes":"no"}</p>
+                </div>
         </div>
         </div>
 
