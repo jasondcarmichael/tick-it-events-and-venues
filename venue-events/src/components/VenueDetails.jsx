@@ -62,3 +62,9 @@ export default function VenueDetails (props) {
 
     ) : null
 }
+
+
+/// events to render for venue
+// axios for events
+// conditional == only render if PK of venue matches FK of event 
+// ternary 
