@@ -26,7 +26,7 @@ export default function Home () {
           }}
           >
               {/* <h1> Welcome To Venue List </h1> */}
-              <div style={{ width: 1100, height: "100vh" }}>
+              <div style={{ width: 1100, height: "50vh" }}>
         <Carousel3d
           cards={[
             {
