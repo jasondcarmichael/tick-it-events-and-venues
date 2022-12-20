@@ -12,7 +12,7 @@ import Carousel4 from "../example/images/Carousel4.png";
 export default function Home (props) {
   let navigate = useNavigate()
     const showVenueEvents = (venue) => {
-        navigate(`${venue.id}`)
+        navigate(`venues/${venue.id}`)
     }
     
   return (
@@ -48,7 +48,7 @@ export default function Home (props) {
               {
                 key: 4,
                 content: (
-                    <CarouselCard title="Defense Heroes" image={Carousel3} />
+                    <CarouselCard title="Dolla and Fodera" image={Carousel4} />
                   ),
                 }
             ]}
