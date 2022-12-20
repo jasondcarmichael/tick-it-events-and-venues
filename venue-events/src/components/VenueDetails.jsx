@@ -29,7 +29,9 @@ export default function VenueDetails (props) {
         <div>
         <div className="venue-events-wrapper">
             <div className="venue-events-header">
+
                 <h1>{venue.name}</h1>
+
                 <img src={venue.photo_url}></img>
             </div>
             <div className="venue-details">
