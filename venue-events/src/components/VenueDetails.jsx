@@ -23,18 +23,43 @@ export default function VenueDetails (props) {
         getData()
     }, [])
 
-    return venue ?(
-        <div className="events-wrapper">
-            <div className="venue-events-header">
-                <h2>Upcoming Events at {venue.name}</h2>
-            </div>
-                <p>Address: {venue.address}</p>
-                <p>Description: {venue.description}</p>
-                <p>Onsite Parking: {venue.onsite_parking?"yes":"no"}</p>
-                <p>Capacity: {venue.capacity}</p>
-                <img src={venue.photo_url}></img>
-                <br />
 
+
+    return venue ?(
+        <div>
+        <div className="venue-events-wrapper">
+            <div className="venue-events-header">
+
+                <h1>{venue.name}</h1>
+
+                <img src={venue.photo_url}></img>
+            </div>
+            <div className="venue-details">
+                <h3>Venue Details</h3>
+                
+                <p className="venue-description">{venue.description}</p>
+                <h5>ADDRESS</h5>
+                <p>{venue.address}</p>
+                <h5>ONSITE PARKING?</h5>
+                <p>{venue.onsite_parking?"Yes":"No"}</p>
+                <h5>CAPACITY</h5>
+                <p>{venue.capacity} Seats</p>
+            </div>
+        </div>
+
+            <div>
+                <h2>Upcoming Events</h2>
+                <p>Event details to come...</p>
+
+                {venue.events.map((event) => {
+                    <h5>{event.name}</h5>
+                })}
+
+
+
+            </div>
+
+       
         </div>
 
     ) : null

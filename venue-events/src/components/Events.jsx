@@ -19,12 +19,12 @@ export default function Events () {
         getData()
     }, [])
 
-    return (
+    return !events? null: (
         <div className="events">
             {events.map((value) => {
                 return (
                     <div key={value.id}>
-                        <h3>Venue: {value.venue}</h3>
+                        <h3>Venue: {value.venue.name}</h3>
                         <h3>Event Name: {value.name}</h3>
                         <h3>Event Type: {value.type}</h3>
                         <p>Event Description: {value.description}</p>
