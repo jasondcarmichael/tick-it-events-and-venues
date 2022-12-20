@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 export default function Events () {
-
+    let navigate = useNavigate()
     const [events, setEvents] = useState([])
 
     const getData = async () => {
@@ -19,12 +20,17 @@ export default function Events () {
         getData()
     }, [])
 
+    const goToEvent =(x)=>{
+        navigate(`${x.id}`)
+    }
+
     return !events? null: (
         <div className="events">
             {events.map((value) => {
                 return (
-                    <div key={value.id}>
+                    <div key={value.id} onClick={()=>goToEvent(value)}>
                         <h3>Venue: {value.venue.name}</h3>
+                        
                         <h3>Event Name: {value.name}</h3>
                         <h3>Event Type: {value.type}</h3>
                         <p>Event Description: {value.description}</p>
