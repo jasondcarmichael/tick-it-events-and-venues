@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.link{
+  color: black;
+  text-decoration: none;
+}
 img {
   max-height: 350px;
   border-radius: 3px;
@@ -14,11 +18,13 @@ img {
 
 .nav-bar {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   height:40px;
-  font-size: 20px;
+  font-size: 30px;
   align-items: center;
+  text-shadow: 2px 2px gray !important;
+  
+
   /* border-bottom: 1px solid black; */
 }
 
