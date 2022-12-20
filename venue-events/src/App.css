@@ -2,15 +2,18 @@
   text-align: center;
 }
 
-.nav {
-  font-size: 20px;
+.link{
+  color: black;
+  text-decoration: none;
 }
 
 .nav-bar {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   height:40px;
-  font-size: 20px;
+  font-size: 30px;
   align-items: center;
+  text-shadow: 2px 2px gray !important;
+  
+
 }

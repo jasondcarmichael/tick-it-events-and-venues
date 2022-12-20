@@ -7,6 +7,7 @@ import CarouselCard from "../example/CarouselCard";
 import Carousel1 from "../example/images/Carousel1.png";
 import Carousel2 from "../example/images/Carousel2.png";
 import Carousel3 from "../example/images/Carousel3.png";
+import Carousel4 from "../example/images/Carousel4.png";
 
 export default function Home () {
 
@@ -25,7 +26,7 @@ export default function Home () {
           }}
           >
               {/* <h1> Welcome To Venue List </h1> */}
-              <div style={{ width: 600, height: "100vh" }}>
+              <div style={{ width: 1100, height: "100vh" }}>
         <Carousel3d
           cards={[
             {
@@ -42,6 +43,12 @@ export default function Home () {
                 <CarouselCard title="Defense Heroes" image={Carousel3} />
               ),
             },
+            {
+              key: 4,
+              content: (
+                  <CarouselCard title="Defense Heroes" image={Carousel3} />
+                ),
+              }
           ]}
           offset={2}
         />
