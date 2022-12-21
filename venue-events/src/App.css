@@ -78,6 +78,8 @@ img {
   background: #03054d;
   color: white;
   width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 .footer {
@@ -165,6 +167,10 @@ a:active {
 .event-details h2 {
   margin-top: 0px;
   margin-bottom: 0px; 
+}
+
+.events-header img {
+  max-width: 500px;
 }
 
 .upcoming-events {
@@ -271,5 +277,13 @@ a:active {
     flex-direction: column;
     justify-content: center;
     padding: 15px;
+  }
+  .events-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
