@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   font-family: 'Hanken Grotesk', sans-serif;
+  position: relative;
+  min-height: 100vh;
 
 }
 
@@ -13,6 +15,10 @@
   color: white;
   z-index: 10000;
   border-bottom: 3px solid #03054d;
+}
+
+.App-main {
+  padding-bottom: 2.5rem;
 }
 
 img {
@@ -78,8 +84,9 @@ img {
   background: #03054d;
   color: white;
   width: 100%;
-  position: fixed;
+  position: absolute;
   bottom: 0;
+  height: 2.5rem;
 }
 
 .footer {
@@ -177,6 +184,7 @@ a:active {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  padding-bottom: 4em;
 }
 
 .upcoming-events-card {
@@ -208,6 +216,7 @@ a:active {
   flex-flow: row wrap;
   justify-content: space-evenly;
   margin: 20px;
+  margin-bottom: 50px;
   padding-bottom: 10px;
 }
 
@@ -285,5 +294,6 @@ a:active {
     padding: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-bottom: 4em;
   }
 }
