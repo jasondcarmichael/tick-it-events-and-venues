@@ -57,7 +57,7 @@ export default function Home (props) {
         </div>     
       </div>
       <div className="venues-container">
-            <h1 id="local-venues"> local venues </h1>
+            <h1 id="local-venues"> Local Venues </h1>
           <div className="venues-wrapper">
             {props.venues.map((venue) => {
                 return (
