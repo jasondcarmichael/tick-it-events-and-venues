@@ -46,12 +46,12 @@ const goToEvent=(x)=>{
         <div className="venue-events-wrapper">
             <div className="venue-events-header">
 
-                <h1>{venue.name}</h1>
+                <h1 className="venue-name">{venue.name}</h1>
 
                 <img src={venue.photo_url}></img>
             </div>
             <div className="venue-details">
-                <h3>Venue Details</h3>
+                <h3>VENUE DETAILS</h3>
                 
                 <p className="venue-description">{venue.description}</p>
                 <h5>ADDRESS</h5>
@@ -64,7 +64,7 @@ const goToEvent=(x)=>{
         </div>
 
         <div>
-            <h2>Upcoming Events</h2>
+            <h1 id="upcoming-events-header">Upcoming Events</h1>
 
             <div className="upcoming-events">
                 
@@ -77,7 +77,7 @@ const goToEvent=(x)=>{
                     null
                     : 
                     <div className="upcoming-events-card" onClick={()=>goToEvent(event)}>
-                    <h5>{event.name} at {event.date}</h5>
+                    <h3>{event.name} on {event.date}</h3>
                     <img src={event.photo_url}></img>
                     <p id="more-info"> More Info >>> </p>
                    </div>
